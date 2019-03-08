@@ -22,6 +22,9 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title">Data Table Default</h4>
+                    <form action="{{route('categories.create')}}" method="get">
+                        <button type="submit" class="btn btn-sm btn-primary mb-3 font-weight-bold">ADD NEW CREATE</button>
+                    </form>
                     <div class="data-tables">
                         <table id="dataTable" class="text-center">
                             <thead class="bg-light text-capitalize">
