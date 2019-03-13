@@ -29,12 +29,12 @@
                         <table id="dataTable" class="text-center">
                             <thead class="bg-light text-capitalize">
                                 <tr>
-                                    <th>Name</th>
+                                    <th>Id</th>
                                     <th>Position</th>
                                     <th>Office</th>
                                     <th>Age</th>
                                     <th>Start Date</th>
-                                    <th>salary</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -44,7 +44,37 @@
                                     <td>Tokyo</td>
                                     <td>33</td>
                                     <td>2008/11/28</td>
-                                    <td>$162,700</td>
+
+                                    <td class="d-flex justify-content-around">
+                                        <!-- <form action="{{route('categories.edit',$categories->id)}}" method="get"> -->
+                        <button type="submit" class="btn btn-xs btn-info font-weight-bold"><i class="fa fa-pencil"></i></button>
+                                        <!-- </form> -->
+                                        <!-- <form action="{{route('categories.create')}}"method="get"> -->
+                        <button type="submit" class="btn btn-xs btn-primary font-weight-bold"><i class="fa fa-eye"></i></button>
+                                        <!-- </form> -->
+                                        <!-- <form action="{{route('categories.create')}}"method="get"> -->
+                                   
+                        <button type="submit" class="btn btn-xs btn-danger  font-weight-bold"><i class="fa fa-trash"></i></button>
+            <!-- </form> -->
+                                
+                                    </td>
+                                    <!-- <td class="d-flex justify-content-around">
+                                    for ($i = 0; $i <= 10; $i++) {
+  echo "The number is: $x <br>";
+}
+                                        <form action="{{route('categories.edit',$category->id)}}" method="get">
+                        <button type="submit" class="btn btn-xs btn-info font-weight-bold"><i class="fa fa-pencil"></i></button>
+                                        </form>
+                                        <form action="{{route('categories.show',$category->id)}}" method="get">
+                        <button type="submit" class="btn btn-xs btn-primary font-weight-bold"><i class="fa fa-eye"></i></button>
+                                        </form>
+                                        <form action="{{route('categories.destroy',$category->id)}}" method="post">
+                                         <input type="hidden" name="_method" value="delete">
+                {{csrf_field()}}
+                <button type="submit" class="btn btn-xs btn-danger font-weight-bold"><i class="fa fa-trash"></i></button>
+            </form>
+                                       
+                                    </td> -->
                                 </tr>
                                 <tr>
                                     <td>Angelica Ramos</td>
