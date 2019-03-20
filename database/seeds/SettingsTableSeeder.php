@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class ContactsTableSeeder extends Seeder
+class SettingsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,13 +13,14 @@ class ContactsTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
         for ($i = 1; $i < 10; $i++) {
-            DB::table('contacts')->insert(
+            DB::table('settings')->insert(
                 [
-                    'name' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+                    'operation_hours' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+                    'address' => $faker->address,
                     'phone_number' => $faker->phoneNumber,
                     'email' => $faker->email,
-                    'address' => $faker->address,
-                    'content' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
+                    'facebook' => $faker->facebook,
+                    'instagram' => $faker->instagram,
                 ]);
         }
     }

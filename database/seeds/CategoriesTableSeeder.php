@@ -19,7 +19,7 @@ class CategoriesTableSeeder extends Seeder
                     'description' => $faker->paragraph($nbSentences = 3, $variableNbSentences = true),
                     'parent_id' => rand(0, 10),
                     'slug' => $faker->sentence($nbWords = 6, $variableNbWords = true),
-                    'image' => $faker->image($dir = '/tmp', $width = 640, $height = 480),
+                    'image' => $faker->imageUrl($width = 640, $height = 480),
                 ]);
         }
     }
