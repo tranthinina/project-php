@@ -22,140 +22,30 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="header-title">Data Table Default</h4>
-                    <form action="{{route('categories.create')}}" method="get">
-                        <button type="submit" class="btn btn-sm btn-primary mb-3 font-weight-bold">ADD NEW CREATE</button>
-                    </form>
+                    <button type="submit" class="btn btn-sm btn-primary mb-3 font-weight-bold">Create</button>
                     <div class="data-tables">
                         <table id="dataTable" class="text-center">
                             <thead class="bg-light text-capitalize">
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start Date</th>
+                                    <th>Name</th>
+                                    <th>Parent ID</th>
+                                    <th>Image</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach($categories as $category)
                                 <tr>
-                                    <td>Airi Satou</td>
-                                    <td>Accountant</td>
-                                    <td>Tokyo</td>
-                                    <td>33</td>
-                                    <td>2008/11/28</td>
-
-                                    <td class="d-flex justify-content-around">
-                                        <!-- <form action="{{route('categories.edit',$categories->id)}}" method="get"> -->
-                        <button type="submit" class="btn btn-xs btn-info font-weight-bold"><i class="fa fa-pencil"></i></button>
-                                        <!-- </form> -->
-                                        <!-- <form action="{{route('categories.create')}}"method="get"> -->
-                        <button type="submit" class="btn btn-xs btn-primary font-weight-bold"><i class="fa fa-eye"></i></button>
-                                        <!-- </form> -->
-                                        <!-- <form action="{{route('categories.create')}}"method="get"> -->
-                                   
-                        <button type="submit" class="btn btn-xs btn-danger  font-weight-bold"><i class="fa fa-trash"></i></button>
-            <!-- </form> -->
-                                
+                                    <td>{{$category->name}}</td>
+                                    <td>{{$category->parent_id}}</td>
+                                    <td>{{$category->image}}</td>
+                                    <td>
+                                        <a href ="#" class="btn btn-xs btn-info font-weight-bold"><i class="fa fa-pencil"></i></a>
+                                        <a href ="#" class="btn btn-xs btn-primary font-weight-bold mr-1"><i class="fa fa-eye"></i></a>
+                                        <a href ="#" class="btn btn-xs btn-danger  font-weight-bold mr-1"><i class="fa fa-trash"></i></a>
                                     </td>
-                                    <!-- <td class="d-flex justify-content-around">
-                                    for ($i = 0; $i <= 10; $i++) {
-  echo "The number is: $x <br>";
-}
-                                        <form action="{{route('categories.edit',$category->id)}}" method="get">
-                        <button type="submit" class="btn btn-xs btn-info font-weight-bold"><i class="fa fa-pencil"></i></button>
-                                        </form>
-                                        <form action="{{route('categories.show',$category->id)}}" method="get">
-                        <button type="submit" class="btn btn-xs btn-primary font-weight-bold"><i class="fa fa-eye"></i></button>
-                                        </form>
-                                        <form action="{{route('categories.destroy',$category->id)}}" method="post">
-                                         <input type="hidden" name="_method" value="delete">
-                {{csrf_field()}}
-                <button type="submit" class="btn btn-xs btn-danger font-weight-bold"><i class="fa fa-trash"></i></button>
-            </form>
-                                       
-                                    </td> -->
                                 </tr>
-                                <tr>
-                                    <td>Angelica Ramos</td>
-                                    <td>Chief Executive Officer (CEO)</td>
-                                    <td>London</td>
-                                    <td>47</td>
-                                    <td>2009/10/09</td>
-                                    <td>$1,200,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Ashton Cox</td>
-                                    <td>Junior Technical Author</td>
-                                    <td>San Francisco</td>
-                                    <td>66</td>
-                                    <td>2009/01/12</td>
-                                    <td>$86,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Bradley Greer</td>
-                                    <td>Software Engineer</td>
-                                    <td>London</td>
-                                    <td>41</td>
-                                    <td>2012/10/13</td>
-                                    <td>$132,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Brenden Wagner</td>
-                                    <td>Software Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>28</td>
-                                    <td>2011/06/07</td>
-                                    <td>$206,850</td>
-                                </tr>
-                                <tr>
-                                    <td>Caesar Vance</td>
-                                    <td>Pre-Sales Support</td>
-                                    <td>New York</td>
-                                    <td>29</td>
-                                    <td>2011/12/12</td>
-                                    <td>$106,450</td>
-                                </tr>
-                                <tr>
-                                    <td>Bruno Nash</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>21</td>
-                                    <td>2012/03/29</td>
-                                    <td>$433,060</td>
-                                </tr>
-                                <tr>
-                                    <td>Bradley Greer</td>
-                                    <td>Software Engineer</td>
-                                    <td>London</td>
-                                    <td>41</td>
-                                    <td>2012/10/13</td>
-                                    <td>$132,000</td>
-                                </tr>
-                                <tr>
-                                    <td>Brenden Wagner</td>
-                                    <td>Software Engineer</td>
-                                    <td>San Francisco</td>
-                                    <td>28</td>
-                                    <td>2011/06/07</td>
-                                    <td>$206,850</td>
-                                </tr>
-                                <tr>
-                                    <td>Caesar Vance</td>
-                                    <td>Pre-Sales Support</td>
-                                    <td>New York</td>
-                                    <td>29</td>
-                                    <td>2011/12/12</td>
-                                    <td>$106,450</td>
-                                </tr>
-                                <tr>
-                                    <td>Bruno Nash</td>
-                                    <td>Software Engineer</td>
-                                    <td>Edinburgh</td>
-                                    <td>21</td>
-                                    <td>2012/03/29</td>
-                                    <td>$433,060</td>
-                                </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

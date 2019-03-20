@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-use App\Category;
+
+use App\Category; // Model Cateogry
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 
 class CategoryController extends Controller
 {
@@ -15,7 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.categories.index');
+        $categories = Category::all();
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -59,14 +60,14 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-       
+
         $categories = Category::findOrFail($id);
-        return view('admin.categories.edit', ['category'=>$categories]);
+        return view('admin.categories.edit', ['category' => $categories]);
         // $category = Category::findOrFail($id);
         // return view('admin.categories.edit',['category'=>$category]);
     }
 
-    /** 
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
